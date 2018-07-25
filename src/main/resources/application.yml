@@ -1,0 +1,24 @@
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/Mahgald/capability-configserver-repository.git
+          search-paths:
+          - 'capability-ms'
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    instance-id: ${spring.application.name}:${random.int}
+    hostname: localhost
+
+server:
+  port: 8888
+  
+info:
+  name: "@project.artifactId@"
+  version: "@project.version@"
+  description: "@project.description@"
+  running-profile: "${spring.profiles.active}"
