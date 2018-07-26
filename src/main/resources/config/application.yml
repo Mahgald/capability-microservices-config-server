@@ -1,18 +1,16 @@
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+
 spring:
   cloud:
     config:
       server:
         git:
           uri: https://github.com/Mahgald/capability-configserver-repository.git
-          search-paths:
-          - 'capability-ms'
-eureka:
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-  instance:
-    instance-id: ${spring.application.name}:${random.int}
-    hostname: localhost
+  application:
+    name: microservices-config-server
 
 server:
   port: 8888
